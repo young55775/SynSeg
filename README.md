@@ -118,9 +118,9 @@ Use the scripts in the `generator` directory to create custom training data.
 
 python generator/cytoskeleton_generator.py 
 
-   --output\_dir ./datasets/cytoskeleton_data 
+   --output_dir ./datasets/cytoskeleton_data 
 
-   --num\_images 1000
+   --num_images 1000
 
 ```
 
@@ -180,7 +180,7 @@ Use the scripts in the `model/` directory with your trained weights to segment n
 
 #### Recommended Practice: Physical Size Normalization
 
-For the most robust and comparable results, we strongly recommend resizing your input images to a consistent physical scale before running inference. Our models were trained on data that simulates a pixel size of \*\*0.075 µm/pixel\*\*.
+For the most robust and comparable results, we strongly recommend resizing your input images to a consistent physical scale before running inference. Our models were trained on data that simulates a pixel size of **0.075 µm pixel**.
 
 
 
@@ -216,7 +216,7 @@ This command automatically saves both a probability map and a binarized mask usi
 
 python model/SynSeg_vesicle.py
 
-   -m weights/SynSeg_Vesicle\_seg.pth
+   -m weights/SynSeg_Vesicle_seg.pth
 
    -i path/to/your/vesicle_image.tif
 
@@ -234,7 +234,7 @@ python model/SynSeg_vesicle.py
 
 
 
-We provide several pre-trained model weights in the `weights/` directory:
+We provide several pre-trained model weights in the `weights` directory:
 
 
 
