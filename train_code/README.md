@@ -225,27 +225,16 @@ Both scripts share the same set of command-line arguments for configuration.
 
 
 | Argument | Required/Optional | Default | Description |
-
 | :--- | :---: | :---: | :--- |
-
 | `--train-img-dir` | **Required** | - | Path to the training images directory. |
-
-| `--train-mask-dir`| **Required** | - | Path to the training masks directory (`.npy` files). |
-
+| `--train-mask-dir` | **Required** | - | Path to the training masks directory (`.npy` files). |
 | `--val-img-dir` | **Required** | - | Path to the validation images directory. |
-
 | `--val-mask-dir` | **Required** | - | Path to the validation masks directory (`.npy` files). |
-
 | `--epochs` | Optional | `50` | Total number of training epochs. |
-
 | `--batch-size` | Optional | `4` | Number of samples per batch. |
-
 | `--lr` | Optional | `0.001` | Learning rate for the optimizer. |
-
 | `--num-workers` | Optional | `4` | Number of worker processes for data loading. |
-
 | `--device` | Optional | `cuda` | Device to use for training (e.g., 'cuda', 'cuda:0', 'cpu'). |
-
 | `--output-dir` | Optional | `checkpoints`| Directory to save model checkpoints. |
 
 
