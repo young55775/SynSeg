@@ -218,10 +218,8 @@ Both scripts share the same set of command-line arguments for configuration.
 
 | Argument | Required/Optional | Default | Description |
 | :--- | :---: | :---: | :--- |
-| `--train-img-dir` | **Required** | - | Path to the training images directory. |
-| `--train-mask-dir` | **Required** | - | Path to the training masks directory (`.npy` files). |
-| `--val-img-dir` | **Required** | - | Path to the validation images directory. |
-| `--val-mask-dir` | **Required** | - | Path to the validation masks directory (`.npy` files). |
+| `--train-dir` | **Required** | - | Path to the training directory. |
+| `--val-dir` | **Required** | - | Path to the validation directory. |
 | `--epochs` | Optional | `50` | Total number of training epochs. |
 | `--batch-size` | Optional | `4` | Number of samples per batch. |
 | `--lr` | Optional | `0.001` | Learning rate for the optimizer. |
