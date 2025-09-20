@@ -150,19 +150,15 @@ This task involves segmenting complex, fine-grained structures. The `train_cytos
 
 python train_cytoskeleton_seg.py 
 
-   --train-img-dir /path/to/your/dataset/train/img 
+   --train-dir /path/to/your/dataset/train/ 
 
-   --train-mask-dir /path/to/your/dataset/train/mask 
-
-   --val-img-dir /path/to/your/dataset/val/img 
-
-   --val-mask-dir /path/to/your/dataset/val/mask 
+   --val-dir /path/to/your/dataset/val/ 
 
    --output-dir ./checkpoints_cytoskeleton 
 
-   --epochs 100 
+   --epochs 10 
 
-   --batch-size 4
+   --batch-size 1
 
 ```
 
@@ -192,19 +188,15 @@ This task involves segmenting blob-like vesicle structures. The `train_vesicle_s
 
 python train_vesicle_seg.py 
 
-   --train-img-dir /path/to/your/dataset/train/img 
+   --train-dir /path/to/your/dataset/train/
 
-   --train-mask-dir /path/to/your/dataset/train/mask 
-
-   --val-img-dir /path/to/your/dataset/val/img 
-
-   --val-mask-dir /path/to/your/dataset/val/mask 
+   --val-dir /path/to/your/dataset/val/ 
 
    --output-dir ./checkpoints_vesicle 
 
-   --epochs 100 
+   --epochs 10 
 
-   --batch-size 4
+   --batch-size 1
 
 ```
 
