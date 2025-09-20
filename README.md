@@ -48,7 +48,7 @@ With as few as **1,000 synthetic images** and **five training epochs**, SynSeg c
 
 ```bash
 
-git clone \[https://github.com/your-username/SynSeg.git](https://github.com/your-username/SynSeg.git)
+git clone [https://github.com/your-username/SynSeg.git](https://github.com/your-username/SynSeg.git)
 
 cd SynSeg
 
@@ -66,7 +66,7 @@ pip install torch numpy opencv-python tqdm livelossplot matplotlib tifffile imag
 
 ```
 
-*(Note: For GPU support, please install a version of PyTorch compatible with your CUDA toolkit by following the instructions on the \[official PyTorch website](https://pytorch.org/)).\*
+*(Note: For GPU support, please install a version of PyTorch compatible with your CUDA toolkit by following the instructions on the [official PyTorch website](https://pytorch.org/)).*
 
 
 
@@ -82,11 +82,11 @@ Get started in seconds by running a pre-trained model on one of the provided exa
 
 ```bash
 
-python model/SynSeg_cytoskeleton.py \
+python model/SynSeg_cytoskeleton.py 
 
-       -m weights/SynSeg_cytoskeleton_seg.pth \
+       -m weights/SynSeg_cytoskeleton_seg.pth 
 
-       -i example/cytoskeleton/test_image.tif \
+       -i example/cytoskeleton/test_image.tif 
 
        -o example/cytoskeleton/output_mask.tif
 
@@ -196,7 +196,7 @@ This command uses the default smart auto-resize logic.
 
 python model/SynSeg_cytoskeleton.py
 
-   -m weights/SynSeg_cytoskeleton\_seg.pth
+   -m weights/SynSeg_cytoskeleton_seg.pth
 
    -i path/to/your/image.tif
 
@@ -224,7 +224,7 @@ python model/SynSeg_vesicle.py
 
 ```
 
-> **Tip:** The inference scripts have multiple modes. The default is a smart auto-resize. You can override this with a fixed resize (`--resize\_size`) or force high-precision tiling (`--use\_tiling`). Run the script with the `-h` flag to see all options.
+> **Tip:** The inference scripts have multiple modes. The default is a smart auto-resize. You can override this with a fixed resize (`--resize_size`) or force high-precision tiling (`--use_tiling`). Run the script with the `-h` flag to see all options.
 
 
 
