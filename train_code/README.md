@@ -166,7 +166,7 @@ python train_cytoskeleton_seg.py
 
 ```
 
-The best model will be saved as `checkpoints\_cytoskeleton/best\_cytoskeleton\_model.pth`.
+The best model will be saved as `checkpoints_cytoskeleton/best_cytoskeleton_model.pth`.
 
 
 
@@ -174,7 +174,7 @@ The best model will be saved as `checkpoints\_cytoskeleton/best\_cytoskeleton\_m
 
 
 
-This task involves segmenting blob-like vesicle structures. The `train\_vesicle\_seg.py` script uses a specific augmentation strategy involving \*\*wide-range intensity scaling\*\*. This approach aims to make the model invariant to a very large spectrum of brightness levels.
+This task involves segmenting blob-like vesicle structures. The `train_vesicle_seg.py` script uses a specific augmentation strategy involving **wide-range intensity scaling**. This approach aims to make the model invariant to a very large spectrum of brightness levels.
 
 
 
@@ -198,11 +198,11 @@ python train_vesicle_seg.py
 
    --val-img-dir /path/to/your/dataset/val/img 
 
-   --val-mask-dir /path/to/your/dataset/val/mask \\
+   --val-mask-dir /path/to/your/dataset/val/mask 
 
-   --output-dir ./checkpoints\_vesicle \\
+   --output-dir ./checkpoints_vesicle 
 
-   --epochs 100 \\
+   --epochs 100 
 
    --batch-size 4
 
