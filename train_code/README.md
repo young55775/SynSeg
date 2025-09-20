@@ -1,8 +1,8 @@
-\# U-Net for Biological Image Segmentation
+# U-Net for Biological Image Segmentation
 
 
 
-This project provides scripts to train U-Net models for two specific biological image segmentation tasks: \*\*Cytoskeleton Segmentation\*\* and \*\*Vesicle Segmentation\*\*. Each task uses a different data augmentation strategy tailored to its specific challenges.
+This project provides scripts to train U-Net models for two specific biological image segmentation tasks: **Cytoskeleton Segmentation** and **Vesicle Segmentation**. Each task uses a different data augmentation strategy tailored to its specific challenges.
 
 
 
@@ -10,7 +10,7 @@ This project provides scripts to train U-Net models for two specific biological 
 
 
 
-\## Requirements
+## Requirements
 
 
 
@@ -54,7 +54,7 @@ A CUDA-enabled NVIDIA GPU is highly recommended for training.
 
 
 
-\## Dataset Structure
+## Dataset Structure
 
 
 
@@ -62,9 +62,9 @@ Both training scripts expect the dataset to follow the same directory structure.
 
 
 
-\- \*\*Image files\*\*: Can be any common image format (e.g., `.png`, `.jpg`, `.tif`).
+- **Image files**: Can be any common image format (e.g., `.png`, `.jpg`, `.tif`).
 
-\- \*\*Mask files\*\*: Must be in NumPy format (`.npy`), and their filenames must exactly match the corresponding image filenames (excluding the extension).
+- **Mask files**: Must be in NumPy format (`.npy`), and their filenames must exactly match the corresponding image filenames (excluding the extension).
 
 
 
@@ -76,37 +76,37 @@ Both training scripts expect the dataset to follow the same directory structure.
 
 │   ├── img/
 
-│   │   ├── image\_001.png
+│   │   ├── image_001.png
 
-│   │   ├── image\_002.png
+│   │   ├── image_002.png
 
 │   │   └── ...
 
 │   └── mask/
 
-│       ├── image\_001.npy
+│       ├── image_001.npy
 
-│       ├── image\_002.npy
+│       ├── image_002.npy
 
 │       └── ...
 
 └── val/
 
-&nbsp;   ├── img/
+   ├── img/
 
-&nbsp;   │   ├── image\_101.png
+   │   ├── image_101.png
 
-&nbsp;   │   ├── image\_102.png
+   │   ├── image_102.png
 
-&nbsp;   │   └── ...
+   │   └── ...
 
-&nbsp;   └── mask/
+   └── mask/
 
-&nbsp;       ├── image\_101.npy
+       ├── image_101.npy
 
-&nbsp;       ├── image\_102.npy
+       ├── image_102.npy
 
-&nbsp;       └── ...
+       └── ...
 
 ```
 
@@ -116,7 +116,7 @@ Both training scripts expect the dataset to follow the same directory structure.
 
 
 
-\## Training Models
+## Training Models
 
 
 
@@ -124,45 +124,45 @@ Choose the script that best fits your segmentation target.
 
 
 
-\### A) Cytoskeleton Segmentation
+### A) Cytoskeleton Segmentation
 
 
 
-This task involves segmenting complex, fine-grained structures. The `train\_cytoskeleton\_seg.py` script is recommended as it uses a robust data augmentation pipeline to learn \*\*shape and texture features\*\* while being insensitive to brightness variations.
+This task involves segmenting complex, fine-grained structures. The `train_cytoskeleton_seg.py` script is recommended as it uses a robust data augmentation pipeline to learn **shape and texture features** while being insensitive to brightness variations.
 
 
 
-\*\*Key Features:\*\*
+**Key Features:**
 
-\- \*\*CLAHE\*\*: Enhances local contrast to make fine details clearer.
+- **CLAHE**: Enhances local contrast to make fine details clearer.
 
-\- \*\*Geometric Augmentations\*\*: Includes flips and elastic deformations to learn morphological features.
+- **Geometric Augmentations**: Includes flips and elastic deformations to learn morphological features.
 
-\- \*\*Controlled Brightness/Contrast\*\*: Teaches the model brightness invariance in a stable manner.
+- **Controlled Brightness/Contrast**: Teaches the model brightness invariance in a stable manner.
 
-\- \*\*Standardized Normalization\*\*: Ensures consistent input distribution for robust performance.
+- **Standardized Normalization**: Ensures consistent input distribution for robust performance.
 
 
 
-\*\*Training Command:\*\*
+**Training Command:**
 
 ```bash
 
-python train\_cytoskeleton\_seg.py \\
+python train_cytoskeleton_seg.py 
 
-&nbsp;   --train-img-dir /path/to/your/dataset/train/img \\
+   --train-img-dir /path/to/your/dataset/train/img 
 
-&nbsp;   --train-mask-dir /path/to/your/dataset/train/mask \\
+   --train-mask-dir /path/to/your/dataset/train/mask 
 
-&nbsp;   --val-img-dir /path/to/your/dataset/val/img \\
+   --val-img-dir /path/to/your/dataset/val/img 
 
-&nbsp;   --val-mask-dir /path/to/your/dataset/val/mask \\
+   --val-mask-dir /path/to/your/dataset/val/mask 
 
-&nbsp;   --output-dir ./checkpoints\_cytoskeleton \\
+   --output-dir ./checkpoints_cytoskeleton 
 
-&nbsp;   --epochs 100 \\
+   --epochs 100 
 
-&nbsp;   --batch-size 4
+   --batch-size 4
 
 ```
 
@@ -170,7 +170,7 @@ The best model will be saved as `checkpoints\_cytoskeleton/best\_cytoskeleton\_m
 
 
 
-\### B) Vesicle Segmentation
+### B) Vesicle Segmentation
 
 
 
@@ -178,37 +178,37 @@ This task involves segmenting blob-like vesicle structures. The `train\_vesicle\
 
 
 
-\*\*Key Features:\*\*
+**Key Features:**
 
-\- \*\*Extreme Intensity Scaling\*\*: Randomly multiplies image intensity by a very large factor.
+- **Extreme Intensity Scaling**: Randomly multiplies image intensity by a very large factor.
 
-\- \*\*Non-linear Transformation\*\*: Occasionally squares pixel values to create different intensity distributions.
+- **Non-linear Transformation**: Occasionally squares pixel values to create different intensity distributions.
 
 
 
-\*\*Training Command:\*\*
+**Training Command:**
 
 ```bash
 
-python train\_vesicle\_seg.py \\
+python train_vesicle_seg.py 
 
-&nbsp;   --train-img-dir /path/to/your/dataset/train/img \\
+   --train-img-dir /path/to/your/dataset/train/img 
 
-&nbsp;   --train-mask-dir /path/to/your/dataset/train/mask \\
+   --train-mask-dir /path/to/your/dataset/train/mask 
 
-&nbsp;   --val-img-dir /path/to/your/dataset/val/img \\
+   --val-img-dir /path/to/your/dataset/val/img 
 
-&nbsp;   --val-mask-dir /path/to/your/dataset/val/mask \\
+   --val-mask-dir /path/to/your/dataset/val/mask \\
 
-&nbsp;   --output-dir ./checkpoints\_vesicle \\
+   --output-dir ./checkpoints\_vesicle \\
 
-&nbsp;   --epochs 100 \\
+   --epochs 100 \\
 
-&nbsp;   --batch-size 4
+   --batch-size 4
 
 ```
 
-The best model will be saved as `checkpoints\_vesicle/best\_vesicle\_model.pth`.
+The best model will be saved as `checkpoints_vesicle/best_vesicle_model.pth`.
 
 
 
@@ -216,7 +216,7 @@ The best model will be saved as `checkpoints\_vesicle/best\_vesicle\_model.pth`.
 
 
 
-\## Command-line Arguments
+## Command-line Arguments
 
 
 
@@ -228,13 +228,13 @@ Both scripts share the same set of command-line arguments for configuration.
 
 | :--- | :---: | :---: | :--- |
 
-| `--train-img-dir` | \*\*Required\*\* | - | Path to the training images directory. |
+| `--train-img-dir` | **Required** | - | Path to the training images directory. |
 
-| `--train-mask-dir`| \*\*Required\*\* | - | Path to the training masks directory (`.npy` files). |
+| `--train-mask-dir`| **Required** | - | Path to the training masks directory (`.npy` files). |
 
-| `--val-img-dir` | \*\*Required\*\* | - | Path to the validation images directory. |
+| `--val-img-dir` | **Required** | - | Path to the validation images directory. |
 
-| `--val-mask-dir` | \*\*Required\*\* | - | Path to the validation masks directory (`.npy` files). |
+| `--val-mask-dir` | **Required** | - | Path to the validation masks directory (`.npy` files). |
 
 | `--epochs` | Optional | `50` | Total number of training epochs. |
 
