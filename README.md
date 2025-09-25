@@ -44,33 +44,45 @@ With as few as **1,000 synthetic images** and **five training epochs**, SynSeg c
 
 
 
-1.  **Clone the repository:**
+### Installation
 
-```bash
+To get started with SynSeg, please follow the steps below. We recommend using a `conda` virtual environment to manage dependencies and avoid conflicts with other projects.
 
-git clone [https://github.com/your-username/SynSeg.git](https://github.com/your-username/SynSeg.git)
+1.  **Clone the Repository**
+    First, clone the SynSeg repository from GitHub and navigate into the project directory.
+    ```bash
+    git clone [https://github.com/young55775/SynSeg.git](https://github.com/young55775/SynSeg.git)
+    cd SynSeg
+    ```
 
-cd SynSeg
+2.  **Create and Activate Conda Environment**
+    Create a new Conda environment for this project. We'll name it `synseg` and use Python 3.9. Then, activate the new environment.
+    ```bash
+    conda create -n synseg python=3.9 -y
+    conda activate synseg
+    ```
 
-```
+3.  **Install Dependencies**
+    With the `synseg` environment active, install the required libraries. We'll install PyTorch first using the recommended `conda` command for optimal performance (especially with a GPU), and then install the remaining packages with `pip`.
 
+    * **For GPU (NVIDIA with CUDA):**
+        Visit the [official PyTorch website](https://pytorch.org/) to get the correct `conda` command for your specific CUDA version. It will look something like this:
+        ```bash
+        # Example for CUDA 12.1 - PLEASE get the correct command from the PyTorch website!
+        conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+        ```
 
+    * **For CPU only:**
+        ```bash
+        conda install pytorch torchvision torchaudio cpuonly -c pytorch
+        ```
 
-2.  **Install dependencies:**
+    * **Then, install the rest of the packages:**
+        ```bash
+        pip install numpy opencv-python tqdm livelossplot matplotlib tifffile imagecodecs
+        ```
 
-This project requires several common scientific computing and deep learning libraries. You can install them via pip.
-
-```bash
-
-pip install torch numpy opencv-python tqdm livelossplot matplotlib tifffile imagecodecs
-
-```
-
-*(Note: For GPU support, please install a version of PyTorch compatible with your CUDA toolkit by following the instructions on the [official PyTorch website](https://pytorch.org/)).*
-
-
-
----
+Your environment is now set up and ready to use! When you're finished working on the project, you can deactivate the environment by running `conda deactivate`.
 
 ## 🚀 Quick Start: Inference on an Example Image
 
@@ -86,9 +98,11 @@ python model/SynSeg_cytoskeleton.py
 
        -m weights/SynSeg_cytoskeleton_seg.pth 
 
-       -i example/cytoskeleton/test_image.tif 
+       -i example/cytoskeleton/tubulin.tif 
 
        -o example/cytoskeleton/output_mask.tif
+
+       --resize 1024
 
 ```
 
